@@ -1,0 +1,36 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    RewriteBase /simdaApiKeu/public
+
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+    RewriteRule ^ %1 [L,NE,R=302]
+    RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Disable directory browsing 
+    Options -Indexes
+
+    # STRONG HTACCESS PROTECTION
+    <Files ~ "^.*\.([Ee][Nn][Vv])">
+     order allow,deny
+     deny from all
+     satisfy all
+    </Files>
+    
+</IfModule>
