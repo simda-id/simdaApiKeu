@@ -1,4 +1,4 @@
-# simda perencanaan
+# SIMDA Api Keuangan
 Kode sumber aplikasi SIMDA Api Keuangan yang dikembangkan oleh [Tim Aplikasi](http://www.simda-online.com).
 
 ### Rilis Terakhir dan Dokumentasi
