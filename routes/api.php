@@ -105,8 +105,15 @@ Route::group(['prefix' => '/'], function() {
     Route::put('/UbahRek5',   'RefRek5Controller@UbahRek5');
     Route::delete('/HpsRek5',   'RefRek5Controller@HpsRek5');
 
-    //Yang lama
+    //Update tgl 31-12-2019
+    Route::get('/getSumberDana',   'RefSumberDanaController@index');
+    Route::post('/BulkSumberDana',   'RefSumberDanaController@apiStore');
+    Route::get('/FiltSumberDana',   'RefSumberDanaController@FiltSumberDana');
+    Route::post('/TmbSumberDana',   'RefSumberDanaController@TmbSumberDana');
+    Route::put('/UbahSumberDana',   'RefSumberDanaController@UbahSumberDana');
+    Route::delete('/HpsSumberDana',   'RefSumberDanaController@HpsSumberDana');
 
+    //Yang lama
     Route::get('/getTaSubUnit',   'TaSubUnitController@index');
     Route::get('/FiltTaSubUnit',   'TaSubUnitController@FiltTaSubUnit');
     Route::post('/TmbTaSubUnit',   'TaSubUnitController@TmbTaSubUnit');
@@ -194,6 +201,7 @@ Route::group(['prefix' => '/'], function() {
     // Route Api Store Regi
     Route::post('/TaTAPD',   'TaTimAnggaranController@apiStore');
     Route::post('/TaSubUnit',   'TaSubUnitController@apiStore');
+    Route::delete('/kosongkanDataAll',   'TaSubUnitController@kosongkanDataAll');
     Route::post('/TaMisi',   'TaMisiController@apiStore');
     Route::post('/TaTujuan',   'TaTujuanController@apiStore');
     Route::post('/TaSasaran',   'TaSasaranController@apiStore');
@@ -204,6 +212,7 @@ Route::group(['prefix' => '/'], function() {
     Route::post('/TaBelanja',   'TaBelanjaController@apiStore');
     Route::post('/TaBelanjaHistory',   'TaBelanjaHistoryController@apiStore');
     Route::post('/TaBelanjaItem',   'TaBelanjaItemController@apiStore');
+    Route::post('/createBelanjaItem',   'TaBelanjaItemController@createBelanjaItem');
     Route::post('/TaBelanjaLanjutan',   'TaBelanjaLanjutanController@apiStore');
     Route::post('/TaBelanjaRinc',   'TaBelanjaRincController@apiStore');
     Route::post('/TaBelanjaRincSub',   'TaBelanjaRincSubController@apiStore');
