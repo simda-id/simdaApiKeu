@@ -100,6 +100,7 @@ Route::group(['prefix' => '/'], function() {
     Route::put('/UbahRek4',   'RefRek4Controller@UbahRek4');
 
     Route::get('/getRek5',   'RefRek5Controller@index');
+    Route::post('/BulkRek5',  'RefRek5Controller@apistore'); 
     Route::get('/FiltRek5',   'RefRek5Controller@FiltRek5');
     Route::post('/TmbRek5',   'RefRek5Controller@TmbRek5');
     Route::put('/UbahRek5',   'RefRek5Controller@UbahRek5');
