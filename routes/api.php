@@ -106,13 +106,16 @@ Route::group(['prefix' => '/'], function() {
     Route::put('/UbahRek5',   'RefRek5Controller@UbahRek5');
     Route::delete('/HpsRek5',   'RefRek5Controller@HpsRek5');
 
-    //Update tgl 31-12-2019
+    //Update tgl 19-12-2020
     Route::get('/getSumberDana',   'RefSumberDanaController@index');
     Route::post('/BulkSumberDana',   'RefSumberDanaController@apiStore');
     Route::get('/FiltSumberDana',   'RefSumberDanaController@FiltSumberDana');
     Route::post('/TmbSumberDana',   'RefSumberDanaController@TmbSumberDana');
     Route::put('/UbahSumberDana',   'RefSumberDanaController@UbahSumberDana');
     Route::delete('/HpsSumberDana',   'RefSumberDanaController@HpsSumberDana');
+    Route::get('/getBidangMapping',   'RefKeuMapping90Controller@getBidangMapping');
+    Route::get('/getKegiatanMapping',   'RefKeuMapping90Controller@getKegiatanMapping');
+    Route::get('/getRekeningMapping',   'RefKeuMapping90Controller@getRekeningMapping');
 
     //Yang lama
     Route::get('/getTaSubUnit',   'TaSubUnitController@index');
